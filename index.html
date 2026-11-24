@@ -4,18 +4,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Berry Mind - Klinik Kesehatan Mental</title>
+<title>Berry Mind | Klinik Digital</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div id="intro">
-  <div class="intro-card">
-    <div class="intro-flower">✿</div>
-    <p class="intro-label">PUSAT KESEHATAN MENTAL</p>
+<div class="intro" id="intro">
+  <div class="intro-decoration"></div>
+  <div class="intro-content">
+    <div class="brand-symbol">B</div>
+    <span class="eyebrow">DIGITAL MENTAL HEALTH CLINIC</span>
     <h1>Berry Mind</h1>
-    <p>Ruang nyaman untuk memahami diri dan menjaga kesehatan.</p>
-    <button onclick="enterApp()">Mulai Sekarang</button>
+    <p>Ruang pribadi untuk mengenali diri,<br>menjaga kesehatan, dan menemukan keseimbangan.</p>
+    <button class="primary-button" onclick="enterApp()">Masuk ke Berry Mind</button>
   </div>
 </div>
 
@@ -23,38 +24,38 @@
 
 <aside class="sidebar">
   <div class="brand">
-    <div class="brand-icon">B.</div>
+    <div class="brand-symbol small">B</div>
     <div>
       <h2>berry mind</h2>
-      <small>MENTAL HEALTH CENTER</small>
+      <span>KLINIK DIGITAL</span>
     </div>
   </div>
 
-  <div class="menu-label">MENU UTAMA</div>
+  <p class="menu-label">MENU UTAMA</p>
 
   <nav>
     <button class="nav-btn active" onclick="showPage('home',this)">
-      <span>01</span> Beranda
+      <span class="nav-icon">⌂</span> Beranda
     </button>
     <button class="nav-btn" onclick="showPage('diary',this)">
-      <span>02</span> Diary Harian
+      <span class="nav-icon">▤</span> Diary Harian
     </button>
     <button class="nav-btn" onclick="showPage('checkup',this)">
-      <span>03</span> Pemeriksaan Kondisi
+      <span class="nav-icon">＋</span> Pemeriksaan Kondisi
     </button>
     <button class="nav-btn" onclick="showPage('health',this)">
-      <span>04</span> Perhatian Kesehatan
+      <span class="nav-icon">◉</span> Pusat Kesehatan
     </button>
     <button class="nav-btn" onclick="showPage('history',this)">
-      <span>05</span> Riwayat Pemeriksaan
+      <span class="nav-icon">▥</span> Riwayat
     </button>
   </nav>
 
   <div class="sidebar-bottom">
-    <div class="status-dot"></div>
+    <div class="online-dot"></div>
     <div>
-      <b>Ruang perawatan diri</b>
-      <small>Kenali dirimu setiap hari.</small>
+      <strong>Ruang perawatan diri</strong>
+      <p>Catatan kesehatan pribadi</p>
     </div>
   </div>
 </aside>
@@ -63,93 +64,128 @@
 
 <header class="topbar">
   <div>
-    <p class="eyebrow">BERRY MIND / KLINIK DIGITAL</p>
+    <p class="eyebrow">BERRY MIND / DASHBOARD</p>
     <h2 id="pageTitle">Beranda</h2>
   </div>
-  <div class="top-date" id="today"></div>
+  <div class="topbar-date">
+    <span class="date-icon">▦</span>
+    <span id="today"></span>
+  </div>
 </header>
 
 <!-- BERANDA -->
+
 <section class="page active" id="home">
 
-  <div class="welcome">
-    <div class="welcome-text">
-      <span class="pill">RUANG KESEHATAN PRIBADI</span>
-      <h1>Rawat dirimu,<br>pahami perasaanmu.</h1>
+  <div class="hero">
+    <div class="hero-content">
+      <span class="hero-label">SELAMAT DATANG DI BERRY MIND</span>
+      <h1>Mulai dengan<br>memahami dirimu.</h1>
       <p>
-        Kesehatan bukan hanya tentang tubuh.
-        Pikiran, perasaan, dan waktu istirahat juga penting.
+        Kesehatan tubuh dan pikiran sama pentingnya.
+        Berikan perhatian pada dirimu setiap hari.
       </p>
-      <button onclick="showPage('checkup')">Mulai pemeriksaan</button>
+      <button class="primary-button" onclick="showPage('checkup')">
+        Periksa Kondisi
+      </button>
     </div>
-    <div class="welcome-art">
-      <div class="art-circle"></div>
-      <div class="art-flower">✿</div>
-      <div class="art-leaf">❋</div>
-      <div class="art-label">CARE<br>YOURSELF</div>
+
+    <div class="hero-visual">
+      <div class="visual-ring ring-one"></div>
+      <div class="visual-ring ring-two"></div>
+      <div class="visual-center">
+        <span>B</span>
+      </div>
+      <div class="visual-caption">BALANCE<br>YOUR MIND</div>
+      <div class="visual-dot dot-one"></div>
+      <div class="visual-dot dot-two"></div>
     </div>
   </div>
 
   <div class="stats">
     <div class="stat-card">
-      <span>CATATAN DIARY</span>
+      <div class="stat-top">
+        <span>CATATAN DIARY</span>
+        <div class="stat-icon pink-bg">01</div>
+      </div>
       <strong id="diaryCount">0</strong>
-      <small>Jumlah cerita tersimpan</small>
+      <p>Total cerita tersimpan</p>
     </div>
+
     <div class="stat-card">
-      <span>PEMERIKSAAN</span>
+      <div class="stat-top">
+        <span>PEMERIKSAAN</span>
+        <div class="stat-icon green-bg">02</div>
+      </div>
       <strong id="checkCount">0</strong>
-      <small>Jumlah catatan pemeriksaan</small>
+      <p>Total pemeriksaan mandiri</p>
     </div>
+
     <div class="stat-card">
-      <span>HARI INI</span>
+      <div class="stat-top">
+        <span>HARI INI</span>
+        <div class="stat-icon cream-bg">03</div>
+      </div>
       <strong id="homeDate">-</strong>
-      <small>Tanggal saat ini</small>
+      <p>Tanggal saat ini</p>
     </div>
   </div>
 
-  <h3 class="section-heading">Layanan kesehatan</h3>
+  <div class="section-header">
+    <div>
+      <p class="eyebrow">LAYANAN KAMI</p>
+      <h2>Ruang kesehatan pribadi</h2>
+    </div>
+  </div>
 
   <div class="service-grid">
-    <div class="service-card pink-card">
-      <div class="service-icon">01</div>
+    <div class="service-card card-pink">
+      <span class="service-number">01 / DIARY</span>
+      <div class="service-decoration">▤</div>
       <h3>Diary Harian</h3>
-      <p>Tempat menyimpan cerita dan perasaan berdasarkan tanggal.</p>
-      <button onclick="showPage('diary')">Buka diary →</button>
+      <p>Catat pengalaman, cerita, dan perasaan berdasarkan tanggal.</p>
+      <button onclick="showPage('diary')">Buka layanan →</button>
     </div>
 
-    <div class="service-card green-card">
-      <div class="service-icon">02</div>
+    <div class="service-card card-green">
+      <span class="service-number">02 / CHECKUP</span>
+      <div class="service-decoration">＋</div>
       <h3>Pemeriksaan Kondisi</h3>
-      <p>Catat keluhan dan kebiasaan kesehatan sehari-hari.</p>
-      <button onclick="showPage('checkup')">Periksa kondisi →</button>
+      <p>Catat keluhan dan kenali kebiasaan kesehatan sehari-hari.</p>
+      <button onclick="showPage('checkup')">Buka layanan →</button>
     </div>
 
-    <div class="service-card cream-card">
-      <div class="service-icon">03</div>
-      <h3>Perhatian Kesehatan</h3>
-      <p>Pelajari pola makan, istirahat, dan perawatan diri.</p>
-      <button onclick="showPage('health')">Lihat informasi →</button>
+    <div class="service-card card-cream">
+      <span class="service-number">03 / HEALTH</span>
+      <div class="service-decoration">◉</div>
+      <h3>Pusat Kesehatan</h3>
+      <p>Pelajari pola makan, tidur, dan perawatan kesehatan.</p>
+      <button onclick="showPage('health')">Buka layanan →</button>
     </div>
   </div>
 
-  <div class="notice">
-    <div class="notice-mark">!</div>
+  <div class="attention-box">
+    <div class="attention-icon">i</div>
     <div>
-      <b>Perhatian kesehatan</b>
-      <p>Jangan mengabaikan keluhan yang berlangsung lama atau semakin berat. Mintalah bantuan orang dewasa tepercaya dan tenaga kesehatan.</p>
+      <h3>Perhatian kesehatan</h3>
+      <p>
+        Jangan abaikan keluhan yang berlangsung lama.
+        Konsultasikan kondisi yang mengganggu aktivitas
+        kepada tenaga kesehatan.
+      </p>
     </div>
   </div>
 
 </section>
 
 <!-- DIARY -->
+
 <section class="page" id="diary">
 
-  <div class="page-intro">
-    <span class="pill">CATATAN PRIBADI</span>
+  <div class="page-heading">
+    <p class="eyebrow">CATATAN PRIBADI</p>
     <h1>Diary Harian</h1>
-    <p>Setiap tanggal mempunyai ruang cerita tersendiri.</p>
+    <p>Satu tanggal, satu ruang untuk ceritamu.</p>
   </div>
 
   <div class="diary-layout">
@@ -162,205 +198,245 @@
       </div>
 
       <div class="calendar-week">
-        <span>Min</span><span>Sen</span><span>Sel</span>
-        <span>Rab</span><span>Kam</span><span>Jum</span><span>Sab</span>
+        <span>Min</span>
+        <span>Sen</span>
+        <span>Sel</span>
+        <span>Rab</span>
+        <span>Kam</span>
+        <span>Jum</span>
+        <span>Sab</span>
       </div>
 
       <div class="calendar-grid" id="calendarGrid"></div>
 
-      <div class="calendar-legend">
-        <span class="legend-dot"></span> Tanggal memiliki cerita
+      <div class="calendar-info">
+        <span></span> Tanggal memiliki catatan
       </div>
     </div>
 
-    <div class="diary-editor">
-      <div class="selected-date">
+    <div class="editor-card">
+      <div class="editor-date">
         <div>
-          <small>TANGGAL CATATAN</small>
-          <h3 id="selectedDate">-</h3>
+          <span class="eyebrow">TANGGAL DIPILIH</span>
+          <h3 id="selectedDate"></h3>
         </div>
-        <span class="date-number" id="dateNumber">-</span>
+        <strong id="dateNumber"></strong>
       </div>
 
-      <label>Judul cerita</label>
-      <input id="diaryTitle" placeholder="Apa yang ingin kamu ceritakan?">
+      <label>Judul catatan</label>
+      <input id="diaryTitle" placeholder="Masukkan judul cerita">
 
-      <label>Ceritakan harimu</label>
-      <textarea id="diaryText" placeholder="Tuliskan cerita, pengalaman, atau hal yang sedang kamu pikirkan..."></textarea>
+      <label>Cerita hari ini</label>
+      <textarea id="diaryText" placeholder="Tuliskan pengalaman atau hal yang ingin kamu ceritakan..."></textarea>
 
-      <button class="primary-btn" onclick="saveDiary()">Simpan Catatan</button>
+      <div class="editor-actions">
+        <button class="primary-button" onclick="saveDiary()">Simpan Catatan</button>
+        <button class="secondary-button" onclick="clearEditor()">Bersihkan</button>
+      </div>
 
-      <div id="diaryMessage"></div>
+      <p id="diaryMessage"></p>
     </div>
 
   </div>
 
-  <h3 class="section-heading">Daftar catatan berdasarkan tanggal</h3>
-  <div id="diaryList" class="record-list"></div>
+  <div class="section-header">
+    <div>
+      <p class="eyebrow">ARSIP PRIBADI</p>
+      <h2>Daftar cerita sebelumnya</h2>
+    </div>
+  </div>
+
+  <div class="record-list" id="diaryList"></div>
 
 </section>
 
 <!-- PEMERIKSAAN -->
+
 <section class="page" id="checkup">
 
-  <div class="page-intro">
-    <span class="pill">PEMERIKSAAN MANDIRI</span>
-    <h1>Bagaimana kondisimu?</h1>
-    <p>Isi informasi berikut untuk mendapatkan panduan awal mengenai keluhan dan kebiasaan kesehatanmu.</p>
+  <div class="page-heading">
+    <p class="eyebrow">PEMERIKSAAN MANDIRI</p>
+    <h1>Pemeriksaan Kondisi</h1>
+    <p>Catat kondisi tubuh, pola istirahat, dan keadaan emosional.</p>
   </div>
 
   <div class="checkup-card">
 
-    <div class="form-group">
-      <label>1. Apa keluhan yang sedang kamu rasakan?</label>
-      <select id="symptom">
-        <option value="">Pilih keluhan</option>
-        <option value="lelah">Mudah lelah</option>
-        <option value="pusing">Pusing atau sakit kepala</option>
-        <option value="tidur">Kesulitan tidur</option>
-        <option value="cemas">Merasa cemas atau gelisah</option>
-        <option value="sedih">Merasa sedih berkepanjangan</option>
-        <option value="sulit">Sulit berkonsentrasi</option>
-        <option value="nafsu">Perubahan nafsu makan</option>
-        <option value="lainnya">Keluhan lainnya</option>
-      </select>
+    <div class="form-heading">
+      <span class="form-number">01</span>
+      <div>
+        <h3>Informasi keluhan</h3>
+        <p>Isi berdasarkan apa yang sedang kamu alami.</p>
+      </div>
     </div>
 
-    <div class="form-group">
-      <label>2. Sudah berapa lama keluhan dirasakan?</label>
-      <select id="duration">
-        <option value="">Pilih durasi</option>
-        <option>Baru hari ini</option>
-        <option>Beberapa hari</option>
-        <option>Lebih dari satu minggu</option>
-        <option>Beberapa minggu atau lebih</option>
-      </select>
+    <label>Keluhan utama</label>
+    <select id="symptom">
+      <option value="">Pilih keluhan</option>
+      <option value="lelah">Mudah merasa lelah</option>
+      <option value="pusing">Pusing atau sakit kepala</option>
+      <option value="tidur">Kesulitan tidur</option>
+      <option value="cemas">Merasa cemas</option>
+      <option value="sedih">Sering merasa sedih</option>
+      <option value="sulit">Sulit berkonsentrasi</option>
+      <option value="nafsu">Perubahan nafsu makan</option>
+      <option value="lainnya">Keluhan lainnya</option>
+    </select>
+
+    <label>Berapa lama keluhan dirasakan?</label>
+    <select id="duration">
+      <option value="">Pilih durasi</option>
+      <option>Baru hari ini</option>
+      <option>Beberapa hari</option>
+      <option>Lebih dari satu minggu</option>
+      <option>Beberapa minggu atau lebih</option>
+    </select>
+
+    <div class="form-divider"></div>
+
+    <div class="form-heading">
+      <span class="form-number">02</span>
+      <div>
+        <h3>Kebiasaan sehari-hari</h3>
+        <p>Perhatikan pola tidur dan makanmu.</p>
+      </div>
     </div>
 
-    <div class="form-group">
-      <label>3. Bagaimana kualitas tidurmu?</label>
-      <select id="sleep">
-        <option value="">Pilih jawaban</option>
-        <option>Baik dan cukup</option>
-        <option>Kadang terganggu</option>
-        <option>Sering kesulitan tidur</option>
-        <option>Sering merasa tidak segar saat bangun</option>
-      </select>
-    </div>
+    <label>Kualitas tidur</label>
+    <select id="sleep">
+      <option value="">Pilih kondisi</option>
+      <option>Baik dan cukup</option>
+      <option>Kadang terganggu</option>
+      <option>Sering kesulitan tidur</option>
+      <option>Tidak merasa segar saat bangun</option>
+    </select>
 
-    <div class="form-group">
-      <label>4. Bagaimana pola makanmu?</label>
-      <select id="food">
-        <option value="">Pilih jawaban</option>
-        <option>Teratur</option>
-        <option>Kadang terlambat</option>
-        <option>Sering melewatkan waktu makan</option>
-        <option>Nafsu makan berubah</option>
-      </select>
-    </div>
+    <label>Pola makan</label>
+    <select id="food">
+      <option value="">Pilih kondisi</option>
+      <option>Teratur</option>
+      <option>Kadang terlambat</option>
+      <option>Sering melewatkan waktu makan</option>
+      <option>Nafsu makan berubah</option>
+    </select>
 
-    <div class="form-group">
-      <label>5. Bagaimana kondisi perasaanmu?</label>
-      <select id="feeling">
-        <option value="">Pilih jawaban</option>
-        <option>Tenang</option>
-        <option>Bahagia</option>
-        <option>Mudah khawatir</option>
-        <option>Sering sedih</option>
-        <option>Merasa kewalahan</option>
-      </select>
-    </div>
+    <label>Keadaan emosional</label>
+    <select id="feeling">
+      <option value="">Pilih kondisi</option>
+      <option>Tenang</option>
+      <option>Bahagia</option>
+      <option>Mudah khawatir</option>
+      <option>Sering sedih</option>
+      <option>Merasa kewalahan</option>
+    </select>
 
-    <div class="form-group">
-      <label>6. Ceritakan keluhan tambahan (opsional)</label>
-      <textarea id="extra" placeholder="Tuliskan hal lain yang ingin disampaikan..."></textarea>
-    </div>
+    <label>Catatan tambahan</label>
+    <textarea id="extra" placeholder="Tuliskan informasi tambahan jika ada..."></textarea>
 
-    <button class="primary-btn full-btn" onclick="runCheckup()">
+    <button class="primary-button full-button" onclick="runCheckup()">
       Lihat Hasil Pemeriksaan
     </button>
 
   </div>
 
-  <div id="result" class="result-card" style="display:none"></div>
+  <div class="result-card" id="result" style="display:none"></div>
 
 </section>
 
-<!-- PERHATIAN KESEHATAN -->
+<!-- PUSAT KESEHATAN -->
+
 <section class="page" id="health">
 
-  <div class="page-intro">
-    <span class="pill">PUSAT EDUKASI KESEHATAN</span>
-    <h1>Perhatian Kesehatan</h1>
-    <p>Informasi sederhana untuk membantu menjaga kesehatan tubuh dan pikiran.</p>
+  <div class="page-heading">
+    <p class="eyebrow">EDUKASI KESEHATAN</p>
+    <h1>Pusat Kesehatan</h1>
+    <p>Informasi dasar untuk membantu menjaga kesehatan tubuh dan pikiran.</p>
   </div>
 
   <div class="health-grid">
 
-    <div class="health-card">
-      <div class="health-number">01 / NUTRISI</div>
+    <article class="health-card">
+      <div class="health-top">
+        <span>01</span>
+        <span>NUTRISI</span>
+      </div>
       <h3>Pola makan seimbang</h3>
-      <p>Kebutuhan tubuh perlu dipenuhi dengan makanan yang beragam.</p>
+      <p>Tubuh membutuhkan beragam nutrisi untuk mendukung aktivitas sehari-hari.</p>
       <ul>
-        <li>Nasi, kentang, atau sumber karbohidrat lain.</li>
-        <li>Telur, ikan, tahu, tempe, atau sumber protein.</li>
+        <li>Karbohidrat sebagai sumber energi.</li>
+        <li>Protein dari ikan, telur, tahu, dan tempe.</li>
         <li>Sayuran dan buah-buahan.</li>
         <li>Air putih secara teratur.</li>
       </ul>
-    </div>
+    </article>
 
-    <div class="health-card">
-      <div class="health-number">02 / ISTIRAHAT</div>
+    <article class="health-card">
+      <div class="health-top">
+        <span>02</span>
+        <span>ISTIRAHAT</span>
+      </div>
       <h3>Menjaga kualitas tidur</h3>
-      <p>Istirahat membantu tubuh dan pikiran memulihkan energi.</p>
+      <p>Tidur membantu tubuh dan pikiran memulihkan energi.</p>
       <ul>
-        <li>Usahakan jadwal tidur teratur.</li>
-        <li>Kurangi penggunaan layar sebelum tidur.</li>
+        <li>Usahakan jadwal tidur konsisten.</li>
+        <li>Kurangi layar sebelum tidur.</li>
         <li>Buat kamar nyaman dan tenang.</li>
         <li>Remaja umumnya membutuhkan tidur 8–10 jam.</li>
       </ul>
-    </div>
+    </article>
 
-    <div class="health-card">
-      <div class="health-number">03 / MENTAL</div>
-      <h3>Menjaga kesehatan pikiran</h3>
-      <p>Perasaan juga perlu diperhatikan dan tidak harus dipendam sendiri.</p>
+    <article class="health-card">
+      <div class="health-top">
+        <span>03</span>
+        <span>KESEHATAN MENTAL</span>
+      </div>
+      <h3>Merawat kesehatan pikiran</h3>
+      <p>Kesehatan mental merupakan bagian penting dari kesehatan secara keseluruhan.</p>
       <ul>
-        <li>Bercerita kepada orang tepercaya.</li>
+        <li>Berbagi cerita dengan orang tepercaya.</li>
         <li>Berikan waktu untuk beristirahat.</li>
         <li>Lakukan kegiatan yang disukai.</li>
-        <li>Hubungi psikolog jika membutuhkan dukungan.</li>
+        <li>Cari dukungan profesional bila diperlukan.</li>
       </ul>
-    </div>
+    </article>
 
-    <div class="health-card">
-      <div class="health-number">04 / AKTIVITAS</div>
-      <h3>Kebiasaan sehat</h3>
-      <p>Aktivitas sederhana dapat membantu menjaga kebugaran.</p>
+    <article class="health-card">
+      <div class="health-top">
+        <span>04</span>
+        <span>AKTIVITAS</span>
+      </div>
+      <h3>Kebiasaan hidup sehat</h3>
+      <p>Kebiasaan sederhana membantu menjaga kesehatan sehari-hari.</p>
       <ul>
         <li>Berjalan santai.</li>
         <li>Melakukan peregangan ringan.</li>
         <li>Menjaga kebersihan diri.</li>
         <li>Meluangkan waktu untuk bersantai.</li>
       </ul>
-    </div>
+    </article>
 
   </div>
 
-  <div class="medical-warning">
-    <h3>Kapan perlu mendapatkan bantuan medis?</h3>
-    <p>Jika keluhan berlangsung lama, mengganggu kegiatan sehari-hari, memburuk, atau membuatmu khawatir, konsultasikan kepada dokter atau psikolog sesuai keluhannya. Jika muncul gejala berat atau mendadak seperti sulit bernapas, nyeri dada, pingsan, atau kebingungan mendadak, segera cari pertolongan medis.</p>
+  <div class="medical-notice">
+    <h3>Kapan harus berkonsultasi?</h3>
+    <p>
+      Jika keluhan berlangsung lama, memburuk, atau mengganggu
+      aktivitas sehari-hari, mintalah pemeriksaan kepada dokter.
+      Untuk kesulitan emosional, kamu juga dapat berkonsultasi
+      dengan psikolog atau psikiater.
+    </p>
   </div>
 
 </section>
 
 <!-- RIWAYAT -->
+
 <section class="page" id="history">
 
-  <div class="page-intro">
-    <span class="pill">ARSIP KESEHATAN</span>
+  <div class="page-heading">
+    <p class="eyebrow">ARSIP KESEHATAN</p>
     <h1>Riwayat Pemeriksaan</h1>
-    <p>Catatan hasil pemeriksaan mandiri yang pernah kamu simpan.</p>
+    <p>Melihat kembali catatan pemeriksaan yang pernah disimpan.</p>
   </div>
 
   <div id="historyList" class="record-list"></div>
@@ -368,9 +444,9 @@
 </section>
 
 <footer>
-  <div class="footer-logo">berry mind.</div>
+  <div class="footer-brand">berry mind.</div>
   <p>Merawat diri dimulai dengan mengenali diri sendiri.</p>
-  <small>Media edukasi dan pencatatan kesehatan, bukan fasilitas diagnosis medis.</small>
+  <small>Platform edukasi dan pencatatan kesehatan pribadi.</small>
 </footer>
 
 </main>
