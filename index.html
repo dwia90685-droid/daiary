@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Berry Mind | Mental Wellness</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="intro">
+  <div class="intro-content">
+    <div class="flower">🌷</div>
+    <h1>Berry Mind</h1>
+    <p>A little space to understand yourself.</p>
+    <button class="start" onclick="enterApp()">Masuk ke Ruangku ♡</button>
+  </div>
+</div>
+
+<div id="app">
+  <aside class="sidebar">
+    <div class="logo">🌸 Berry <span>Mind</span></div>
+    <div class="nav-title">MENU UTAMA</div>
+    <div class="nav">
+      <button class="active" onclick="showPage('home',this)">🏡 Beranda</button>
+      <button onclick="showPage('diary',this)">📖 Diary Saya</button>
+      <button onclick="showPage('mood',this)">🌷 Mood Journal</button>
+      <button onclick="showPage('doctor',this)">🩺 Profil Psikolog</button>
+      <button onclick="showPage('care',this)">🍵 Self Care</button>
+    </div>
+    <div class="profile">
+      🌼 Ruang Aman Berry Mind
+      <p>Tempat untuk mengenal diri sendiri.</p>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="top">
+      <h2 id="pageTitle">Beranda</h2>
+      <div class="date" id="today"></div>
+    </div>
+
+    <section class="page active" id="home">
+      <div class="hero">
+        <div>
+          <span class="tag">🌿 YOUR MENTAL WELLNESS SPACE</span>
+          <h1>Halo, selamat datang! 🌷</h1>
+          <p>Tidak apa-apa jika hari ini belum sempurna.<br>Beri dirimu waktu untuk tumbuh.</p>
+        </div>
+        <div class="doctor">👩🏻‍⚕️</div>
+      </div>
+
+      <h2 class="section-title">Jelajahi Ruangmu</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="emoji">📖</div>
+          <h3>My Personal Diary</h3>
+          <p>Tuliskan cerita dan hal yang sedang kamu rasakan.</p>
+          <button class="action" onclick="showPage('diary')">Buka Diary →</button>
+        </div>
+        <div class="card">
+          <div class="emoji">🌷</div>
+          <h3>Mood Journal</h3>
+          <p>Kenali dan catat suasana hatimu hari ini.</p>
+          <button class="action pink" onclick="showPage('mood')">Catat Mood →</button>
+        </div>
+        <div class="card">
+          <div class="emoji">🩺</div>
+          <h3>Psychology Corner</h3>
+          <p>Informasi seputar psikologi dan kesehatan mental.</p>
+          <button class="action purple" onclick="showPage('doctor')">Jelajahi →</button>
+        </div>
+      </div>
+
+      <div class="doctor-box">
+        <div class="emoji">👩🏻‍⚕️🌼</div>
+        <div>
+          <h3>Pesan kecil untukmu</h3>
+          <p>Kamu tidak harus selalu kuat. Mengenali perasaan sendiri juga merupakan bentuk kepedulian.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="diary">
+      <div class="card">
+        <h2 class="section-title">📖 My Personal Diary</h2>
+        <p>Ceritakan apa yang ada di pikiranmu hari ini.</p>
+        <input id="diaryTitle" placeholder="Judul ceritamu...">
+        <textarea id="diaryText" placeholder="Hari ini aku ingin bercerita tentang..."></textarea>
+        <button class="save" onclick="saveDiary()">Simpan Cerita ♡</button>
+      </div>
+      <h2 class="section-title">Cerita Sebelumnya 🌸</h2>
+      <div id="diaryList"></div>
+    </section>
+
+    <section class="page" id="mood">
+      <div class="card">
+        <h2 class="section-title">🌷 How Are You Feeling?</h2>
+        <p>Pilih suasana hati yang menggambarkan perasaanmu.</p>
+        <div class="moods">
+          <button class="mood" onclick="selectMood(this,'Bahagia 😊')">😊</button>
+          <button class="mood" onclick="selectMood(this,'Tenang 🌿')">😌</button>
+          <button class="mood" onclick="selectMood(this,'Sedih 🌧️')">😢</button>
+          <button class="mood" onclick="selectMood(this,'Lelah 🍵')">😴</button>
+          <button class="mood" onclick="selectMood(this,'Cemas 🌷')">😟</button>
+          <button class="mood" onclick="selectMood(this,'Bersemangat ✨')">🥰</button>
+        </div>
+        <p id="moodResult">Belum memilih suasana hati.</p>
+        <textarea id="moodNote" placeholder="Apa yang membuatmu merasa seperti ini?"></textarea>
+        <button class="save" onclick="saveMood()">Simpan Mood</button>
+      </div>
+      <h2 class="section-title">Riwayat Mood</h2>
+      <div id="moodList"></div>
+    </section>
+
+    <section class="page" id="doctor">
+      <div class="hero">
+        <div>
+          <span class="tag">PSYCHOLOGY CORNER</span>
+          <h1>Psychology Space 🌸</h1>
+          <p>Belajar memahami emosi, pikiran, dan kesehatan mental.</p>
+        </div>
+        <div class="doctor">👩🏻‍⚕️</div>
+      </div>
+      <h2 class="section-title">Kenali Profesi Kesehatan Mental</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="emoji">👩🏻‍⚕️</div>
+          <h3>Psikolog</h3>
+          <p>Profesional yang mempelajari perilaku, pikiran, dan emosi manusia serta memberikan layanan psikologis.</p>
+        </div>
+        <div class="card">
+          <div class="emoji">🩺</div>
+          <h3>Psikiater</h3>
+          <p>Dokter spesialis kesehatan jiwa yang memiliki pendidikan kedokteran dan kompetensi medis.</p>
+        </div>
+        <div class="card">
+          <div class="emoji">🌼</div>
+          <h3>Kesehatan Mental</h3>
+          <p>Bagian penting dari kesehatan yang berkaitan dengan pikiran, emosi, dan kehidupan sehari-hari.</p>
+        </div>
+      </div>
+      <div class="doctor-box">
+        <div class="emoji">💗</div>
+        <div>
+          <h3>Catatan penting</h3>
+          <p>Berry Mind adalah media pencatatan dan edukasi, bukan pengganti konsultasi atau diagnosis profesional.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="care">
+      <div class="selfcare">
+        <h2 class="section-title">🍵 Your Self Care Corner</h2>
+        <p>Luangkan waktu untuk hal-hal sederhana.</p>
+        <br>
+        🌷 Beristirahat ketika merasa lelah.<br>
+        🍵 Minum air putih yang cukup.<br>
+        🌿 Menghabiskan waktu di tempat nyaman.<br>
+        📖 Menulis hal yang ingin diceritakan.<br>
+        🎧 Mendengarkan musik yang menenangkan.<br>
+        ☀️ Melakukan kegiatan yang disukai.
+      </div>
+      <div class="card" style="margin-top:20px">
+        <h3>Little Reminder 💌</h3>
+        <p>Setiap orang mempunyai perjalanan yang berbeda. Kamu berhak mendapatkan dukungan ketika membutuhkannya.</p>
+      </div>
+    </section>
+
+    <footer>🌷 Berry Mind · A little space for yourself ♡</footer>
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
